@@ -1,66 +1,67 @@
-**DSA Preparation Checklist**
+# DSA Preparation Checklist
 
 To build strong fundamentals in Data Structures and Algorithms, you should implement the following data structures and algorithms from scratch. For each, start with an empty class/template and write all the core methods yourself—no library shortcuts.
 
-Data Structures to Implement
+## Data Structures to Implement
 
-1. Arrays
-[ X ] Fixed-size array class (insert, delete, get, set)
+### 1. Arrays
+- [x] Fixed-size array class (insert, delete, get, set)
 
-2. Linked Lists
-[ X ] Singly Linked List (append, prepend, insert, delete, get, set)
-[ X ] Doubly Linked List (append, prepend, insert, delete, get, set)
+### 2. Linked Lists
+- [x] Singly Linked List (append, prepend, insert, delete, get, set)
+- [x] Doubly Linked List (append, prepend, insert, delete, get, set)
 
-3. Stacks
-[ X ] Stack using array
-[ X ] Stack using linked list
+### 3. Stacks
+- [x] Stack using array
+- [x] Stack using linked list
 
-4. Queues
-[ ] Queue using array
-[ ] Queue using linked list
-[ ] Circular queue
+### 4. Queues
+- [ ] Queue using array
+- [ ] Queue using linked list
+- [ ] Circular queue
 
-5. Hash Tables
-[ ] Hash map with basic collision handling (chaining or open addressing)
+### 5. Hash Tables
+- [ ] Hash map with basic collision handling (chaining or open addressing)
 
-6. Trees
-[ ] Binary Tree (insert, delete, traversals: inorder, preorder, postorder)
-[ ] Binary Search Tree (insert, delete, search)
-[ ] AVL Tree or Red-Black Tree (basic balancing)
-[ ] Heap (min-heap and max-heap: insert, delete, heapify)
-[ ] Trie (insert, search, delete)
+### 6. Trees
+- [ ] Binary Tree (insert, delete, traversals: inorder, preorder, postorder)
+- [ ] Binary Search Tree (insert, delete, search)
+- [ ] AVL Tree or Red-Black Tree (basic balancing)
+- [ ] Heap (min-heap and max-heap: insert, delete, heapify)
+- [ ] Trie (insert, search, delete)
 
-7. Graphs
-[ ] Graph using adjacency list (add/remove vertex/edge, BFS, DFS)
-[ ] Graph using adjacency matrix
+### 7. Graphs
+- [ ] Graph using adjacency list (add/remove vertex/edge, BFS, DFS)
+- [ ] Graph using adjacency matrix
 
-8. Disjoint Set (Union-Find)
-[ ] Make set, find, union (with path compression and union by rank)
+### 8. Disjoint Set (Union-Find)
+- [ ] Make set, find, union (with path compression and union by rank)
 
-Algorithms to Implement
-1. Sorting Algorithms
-[ ] Bubble Sort
-[ ] Selection Sort
-[ ] Insertion Sort
-[ ] Merge Sort
-[ ] Quick Sort
-[ ] Heap Sort
-[ ] Counting/Radix/Bucket Sort (optional)
+## Algorithms to Implement
 
-2. Searching Algorithms
-[ ] Linear Search
-[ ] Binary Search (iterative and recursive)
+### 1. Sorting Algorithms
+- [ ] Bubble Sort
+- [ ] Selection Sort
+- [ ] Insertion Sort
+- [ ] Merge Sort
+- [ ] Quick Sort
+- [ ] Heap Sort
+- [ ] Counting/Radix/Bucket Sort (optional)
 
-3. Recursion & Backtracking
-[ ] Factorial, Fibonacci (recursive and iterative)
-[ ] N-Queens, Subsets, Permutations
+### 2. Searching Algorithms
+- [ ] Linear Search
+- [ ] Binary Search (iterative and recursive)
 
-4. Dynamic Programming Basics
-[ ] Memoization and Tabulation examples (e.g., Fibonacci, Coin Change, Knapsack)
+### 3. Recursion & Backtracking
+- [ ] Factorial, Fibonacci (recursive and iterative)
+- [ ] N-Queens, Subsets, Permutations
 
-5. Graph Algorithms
-[ ] BFS and DFS (both iterative and recursive)
-[ ] Dijkstra’s Algorithm
-[ ] Kruskal’s and Prim’s Minimum Spanning Tree
-[ ] Topological Sort
-[ ] Cycle detection
+### 4. Dynamic Programming Basics
+- [ ] Memoization and Tabulation examples (e.g., Fibonacci, Coin Change, Knapsack)
+
+### 5. Graph Algorithms
+- [ ] BFS and DFS (both iterative and recursive)
+- [ ] Dijkstra's Algorithm
+- [ ] Kruskal's and Prim's Minimum Spanning Tree
+- [ ] Topological Sort
+- [ ] Cycle detection
