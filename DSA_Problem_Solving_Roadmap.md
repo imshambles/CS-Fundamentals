@@ -106,7 +106,7 @@ Tree/BST   Trie                            Adjacency     Adjacency
   │        │  │Substruc│   │DFS?  │ │/List│   │Match? │        │
   └───┬────┘  └───┬────┘   └──┬───┘ └──┬──┘   └───┬───┘        │
       │           │           │        │          │            │
-   YES│NO      YES│NO     LEVEL│PATH   │          │            ▼
+   YES│NO      YES│NO    LEVEL│PATH    │          │            ▼
       ▼ ▼         ▼ ▼        ▼  ▼      ▼          ▼       ┌─────────┐
    Binary│    DP/Greedy│   BFS DFS  Sliding/   KMP/       │DP/Combo │
    Search│      │      │        │   TwoPtr   Rabin-Karp   │ Math    │
