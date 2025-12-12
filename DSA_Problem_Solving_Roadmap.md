@@ -51,14 +51,14 @@ Ask yourself these **5 Key Questions**:
                     ▼                     ▼
             Need ORDERING?          Need FAST LOOKUP?
                     │                     │
-           ┌────────┼────────┐           ▼
+           ┌────────┼────────┐            ▼
            ▼        ▼        ▼      ┌────────────┐
-        LIFO?    FIFO?   PRIORITY? │ Hash Table │
+        LIFO?    FIFO?   PRIORITY?  │ Hash Table │
            │        │        │      │   (O(1))   │
            ▼        ▼        ▼      └────────────┘
-        ┌────┐  ┌─────┐  ┌──────┐
-        │Stack│ │Queue│  │ Heap │
-        └────┘  └─────┘  └──────┘
+        ┌────-┐  ┌─────┐  ┌──────┐
+        │Stack│  │Queue│  │ Heap │
+        └────-┘  └─────┘  └──────┘
                                │
         ┌──────────────────────┴───────────────────────┐
         ▼                                              ▼
@@ -101,17 +101,17 @@ Tree/BST   Trie                            Adjacency     Adjacency
    SEARCHING   OPTIMIZATION  GRAPH  SEQUENCE   PATTERN     COUNTING
        │           │           │       │           │           │
        ▼           ▼           ▼       ▼           ▼           │
-  ┌────────┐  ┌────────┐   ┌──────┐ ┌─────┐   ┌───────┐       │
-  │Sorted? │  │Optimal │   │BFS/  │ │Array│   │String │       │
-  │        │  │Substruc│   │DFS?  │ │/List│   │Match? │       │
-  └───┬────┘  └───┬────┘   └──┬───┘ └──┬──┘   └───┬───┘       │
-      │           │           │        │          │           │
-   YES│NO      YES│NO     LEVEL│PATH   │          │           ▼
-      ▼ ▼         ▼ ▼        ▼  ▼      ▼          ▼      ┌─────────┐
-   Binary│    DP/Greedy│   BFS DFS  Sliding/   KMP/      │DP/Combo │
-   Search│      │      │        │   TwoPtr   Rabin-Karp │ Math    │
-         ▼      │      ▼           ▼    │               └─────────┘
-      Linear    │   Backtrack       ▼   ▼
+  ┌────────┐  ┌────────┐   ┌──────┐ ┌─────┐   ┌───────┐        │
+  │Sorted? │  │Optimal │   │BFS/  │ │Array│   │String │        │
+  │        │  │Substruc│   │DFS?  │ │/List│   │Match? │        │
+  └───┬────┘  └───┬────┘   └──┬───┘ └──┬──┘   └───┬───┘        │
+      │           │           │        │          │            │
+   YES│NO      YES│NO     LEVEL│PATH   │          │            ▼
+      ▼ ▼         ▼ ▼        ▼  ▼      ▼          ▼       ┌─────────┐
+   Binary│    DP/Greedy│   BFS DFS  Sliding/   KMP/       │DP/Combo │
+   Search│      │      │        │   TwoPtr   Rabin-Karp   │ Math    │
+         ▼      │      ▼        ▼      │                  └─────────┘
+      Linear    │   Backtrack          ▼
       Search    ▼                Monotonic
              Greedy              Stack/Deque
 ```
