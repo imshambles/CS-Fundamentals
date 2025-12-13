@@ -100,21 +100,21 @@ YES │ NO        YES │ NO        YES │ NO             │
 │                        SPECIAL CASE DECISION TREE                           │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
-│  Need to MERGE/GROUP items?  ──────────────────────▶  UNION-FIND (DSU)     │
+│  Need to MERGE/GROUP items?  ──────────────────────▶  UNION-FIND (DSU)      │
 │                                                                             │
-│  Need PREVIOUS/NEXT greater/smaller?  ─────────────▶  MONOTONIC STACK      │
+│  Need PREVIOUS/NEXT greater/smaller?  ─────────────▶  MONOTONIC STACK       │
 │                                                                             │
-│  Need SLIDING WINDOW max/min?  ────────────────────▶  MONOTONIC DEQUE      │
+│  Need SLIDING WINDOW max/min?  ────────────────────▶  MONOTONIC DEQUE       │
 │                                                                             │
-│  Need LRU CACHE (recent access)?  ─────────────────▶  HASHMAP + DOUBLY LL  │
+│  Need LRU CACHE (recent access)?  ─────────────────▶  HASHMAP + DOUBLY LL   │
 │                                                                             │
-│  Need to process by LEVELS?  ──────────────────────▶  QUEUE (BFS)          │
+│  Need to process by LEVELS?  ──────────────────────▶  QUEUE (BFS)           │
 │                                                                             │
-│  Need to UNDO operations?  ────────────────────────▶  STACK                │
+│  Need to UNDO operations?  ────────────────────────▶  STACK                 │
 │                                                                             │
-│  Need FREQUENCY counting?  ────────────────────────▶  HASHMAP              │
+│  Need FREQUENCY counting?  ────────────────────────▶  HASHMAP               │
 │                                                                             │
-│  Need TOP K / K-th element?  ──────────────────────▶  HEAP                 │
+│  Need TOP K / K-th element?  ──────────────────────▶  HEAP                  │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -153,162 +153,162 @@ YES │ NO        YES │ NO        YES │ NO             │
      ▼              ▼             ▼               ▼             ▼              ▼
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ SEARCHING                                                                        │
+│ SEARCHING                                                                       │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   Is data SORTED?                                                               │
-│        │                                                                         │
-│    YES │ NO                                                                      │
-│        ▼   ▼                                                                     │
+│        │                                                                        │
+│    YES │ NO                                                                     │
+│        ▼   ▼                                                                    │
 │   ┌─────────┐  ┌────────────────┐                                               │
 │   │ BINARY  │  │ Need exact     │                                               │
 │   │ SEARCH  │  │ match?         │                                               │
 │   └─────────┘  └───────┬────────┘                                               │
-│                    YES │ NO                                                      │
-│                     ▼     ▼                                                      │
-│                 HashMap  Linear Scan                                             │
-│                                                                                  │
+│                    YES │ NO                                                     │
+│                     ▼     ▼                                                     │
+│                 HashMap  Linear Scan                                            │
+│                                                                                 │
 │   Searching for K-th element?  ──────────▶  HEAP or QUICKSELECT                 │
 │   Search in 2D sorted matrix?  ──────────▶  Binary Search (row/col)             │
 │   Search in rotated array?  ─────────────▶  Modified Binary Search              │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ SHORTEST PATH                                                                    │
+│ SHORTEST PATH                                                                   │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   What kind of graph?                                                           │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Unweighted?  ────────────────────────▶  BFS                         │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Weighted (non-negative)?  ───────────▶  DIJKSTRA                    │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Weighted (can be negative)?  ────────▶  BELLMAN-FORD                │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ All pairs shortest path?  ───────────▶  FLOYD-WARSHALL              │
-│        │                                                                         │
+│        │                                                                        │
 │        └──▶ DAG (directed acyclic)?  ────────────▶  TOPOLOGICAL SORT + DP       │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ OPTIMIZATION (Min/Max)                                                           │
+│ OPTIMIZATION (Min/Max)                                                          │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   Are there OVERLAPPING subproblems?                                            │
-│        │                                                                         │
-│    YES │ NO                                                                      │
-│        ▼   ▼                                                                     │
+│        │                                                                        │
+│    YES │ NO                                                                     │
+│        ▼   ▼                                                                    │
 │       DP  ┌─────────────────────────────────┐                                   │
 │           │ Does LOCAL optimal lead to      │                                   │
 │           │ GLOBAL optimal?                 │                                   │
 │           └──────────────┬──────────────────┘                                   │
-│                      YES │ NO                                                    │
-│                       ▼     ▼                                                    │
-│                   GREEDY  BACKTRACKING                                           │
-│                                                                                  │
+│                      YES │ NO                                                   │
+│                       ▼     ▼                                                   │
+│                   GREEDY  BACKTRACKING                                          │
+│                                                                                 │
 │   "Can we achieve X?" (Yes/No question) ─────▶  BINARY SEARCH ON ANSWER         │
 │   "Minimum operations to transform" ─────────▶  BFS (each operation = edge)     │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │ GENERATE ALL (Combinations/Permutations/Subsets)                                │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   Always use ──────────────────────────────▶  BACKTRACKING                      │
-│                                                                                  │
-│   Pattern:                                                                       │
+│                                                                                 │
+│   Pattern:                                                                      │
 │   ├──▶ Subsets: for each element, include or exclude                            │
 │   ├──▶ Permutations: try each unused element at each position                   │
 │   ├──▶ Combinations: only consider elements AFTER current index                 │
 │   └──▶ With duplicates: SORT first, skip consecutive duplicates                 │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │ SUBARRAY / SUBSTRING                                                            │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   What's the constraint?                                                        │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Fixed size K?  ──────────────────────▶  SLIDING WINDOW (fixed)      │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Longest/shortest with condition?  ───▶  SLIDING WINDOW (variable)   │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Sum equals K?  ──────────────────────▶  PREFIX SUM + HASHMAP        │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Two elements in sorted array?  ──────▶  TWO POINTERS                │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Next/Previous greater/smaller?  ─────▶  MONOTONIC STACK             │
-│        │                                                                         │
+│        │                                                                        │
 │        └──▶ Longest subsequence?  ───────────────▶  DP                          │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ GRAPH PROBLEMS                                                                   │
+│ GRAPH PROBLEMS                                                                  │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   What are you doing?                                                           │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Traverse/explore all?  ──────────────▶  DFS or BFS                  │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Level by level?  ────────────────────▶  BFS                         │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Detect cycle?                                                       │
 │        │         ├──▶ Undirected?  ───────────────▶  DFS (parent) or UNION-FIND │
 │        │         └──▶ Directed?  ─────────────────▶  DFS (3 colors)             │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Connected components?  ──────────────▶  DFS/BFS or UNION-FIND       │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Task ordering/prerequisites?  ───────▶  TOPOLOGICAL SORT            │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Minimum spanning tree?  ─────────────▶  KRUSKAL or PRIM             │
-│        │                                                                         │
+│        │                                                                        │
 │        └──▶ Bipartite check?  ───────────────────▶  BFS/DFS (2-coloring)        │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ TREE PROBLEMS                                                                    │
+│ TREE PROBLEMS                                                                   │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   What are you doing?                                                           │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Traverse all nodes?  ────────────────▶  DFS (Pre/In/Post) or BFS    │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Find height/depth?  ─────────────────▶  DFS (recursive)             │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Level by level?  ────────────────────▶  BFS                         │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Path from root to node?  ────────────▶  DFS with path tracking      │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Lowest Common Ancestor?  ────────────▶  DFS (recursive or iterative)│
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Validate BST?  ──────────────────────▶  DFS with min/max bounds     │
-│        │                                                                         │
+│        │                                                                        │
 │        └──▶ Serialize/Deserialize?  ─────────────▶  Preorder + null markers     │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│ STRING PROBLEMS                                                                  │
+│ STRING PROBLEMS                                                                 │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                  │
+│                                                                                 │
 │   What are you doing?                                                           │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Pattern matching in text?  ──────────▶  KMP / RABIN-KARP / Z-ALGO   │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Prefix search / autocomplete?  ──────▶  TRIE                        │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Longest palindrome?  ────────────────▶  DP or MANACHER              │
-│        │                                                                         │
+│        │                                                                        │
 │        ├──▶ Anagram / permutation check?  ───────▶  FREQUENCY MAP + SLIDING WIN │
-│        │                                                                         │
+│        │                                                                        │
 │        └──▶ Edit distance / transform?  ─────────▶  DP (2D)                     │
-│                                                                                  │
+│                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
