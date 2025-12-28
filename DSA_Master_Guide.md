@@ -13,7 +13,101 @@ This guide provides a comprehensive analysis of these patterns, their mechanics,
 
 A frequent failure mode is selecting an algorithm without considering input constraints. The constraints are not just boundary conditions; they are **direct hints** about the required time complexity.
 
-### 2.1 The $10^8$ Operations Rule
+## 2. Problem Analysis & Decision Strategy
+
+### 2.1 The 5 Key Questions
+Before coding, ask these five questions to frame the problem:
+
+| # | Question | Why It Matters |
+|---|----------|----------------|
+| 1 | What is the **input format**? (array, graph, etc.) | Determines base data structure |
+| 2 | What is the **output format**? (single value, list?) | Defines what to return |
+| 3 | What are the **constraints**? (n ≤ 10⁵?) | Determines time complexity needed |
+| 4 | What **operations** are required? (search, sort?) | Narrows down DS choices |
+| 5 | Are there any **patterns** in examples? | Hints at the approach (e.g. sorted = Binary Search) |
+
+### 2.2 Data Structure Decision Tree
+
+```mermaid
+graph TD
+    Start([🎯 What do you need?]) --> Ordering{Ordering?}
+    Start --> Lookup{Fast Lookup?}
+    Start --> Sorted{Sorted Data?}
+    Start --> Rel{Relationships?}
+    Start --> Range{Range Queries?}
+
+    %% Ordering
+    Ordering -->|LIFO| Stack[Stack]
+    Ordering -->|FIFO| Queue[Queue]
+    Ordering -->|Priority| Heap[Heap / Priority Queue]
+
+    %% Lookup
+    Lookup -->|Key-Value| HM[Hash Map]
+    Lookup -->|Existence| HS[Hash Set]
+
+    %% Sorted
+    Sorted -->|Dynamic Update| BST[BST / TreeMap]
+    Sorted -->|Static| ARR[Sorted Array]
+
+    %% Relationships
+    Rel -->|Hierarchical| Tree[Tree]
+    Rel -->|Network/Cyclic| Graph[Graph]
+    Rel -->|Disjoint Sets| DSU[Union-Find]
+
+    %% Range
+    Range -->|With Updates| Seg[Segment Tree / BIT]
+    Range -->|Static| Pre[Prefix Sum]
+
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style Stack fill:#aaf
+    style Queue fill:#aaf
+    style Heap fill:#aaf
+    style HM fill:#bfb
+    style HS fill:#bfb
+    style BST fill:#fbf
+    style Graph fill:#fbf
+```
+
+### 2.3 Algorithm Selection Flowchart
+
+```mermaid
+graph TD
+    Start([❓ What is the Goal?]) --> Find{Find / Search?}
+    Start --> Path{Shortest Path?}
+    Start --> Opt{Optimize?}
+    Start --> Gen{Generate All?}
+    Start --> Conn{Connectivity?}
+
+    %% Search
+    Find -->|Sorted?| BS[Binary Search]
+    Find -->|Unsorted?| HM[HashMap / Linear Scan]
+    Find -->|Top K?| Heap[Heap / QuickSelect]
+
+    %% Shortest Path
+    Path -->|Unweighted| BFS[BFS]
+    Path -->|Weighted| Dijk[Dijkstra]
+    Path -->|Negative Weights| BF[Bellman-Ford]
+
+    %% Optimize
+    Opt -->|Overlapping Subproblems?| DP[Dynamic Programming]
+    Opt -->|Locally Optimal?| Greedy[Greedy]
+
+    %% Generate
+    Gen -->|Combinatorial| BT[Backtracking]
+
+    %% Connectivity
+    Conn -->|Cycle/Groups| UF[Union-Find]
+    Conn -->|Traversal| DFS[DFS]
+
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style BS fill:#aaf
+    style BFS fill:#fbf
+    style DP fill:#bfb
+```
+
+---
+
+## 3. The Physics of Algorithms: Complexity Analysis
 A standard single-core processor can execute roughly **$10^8$ operations per second**.
 - If your algorithm requires $10^{10}$ operations, it will **Time Limit Exceeded (TLE)** (usually > 1 sec).
 - analyzing $N$ (input size) tells you the maximum allowable Time Complexity.
@@ -37,7 +131,7 @@ A standard single-core processor can execute roughly **$10^8$ operations per sec
 
 ---
 
-## 3. Core Algorithmic Patterns
+## 4. Core Algorithmic Patterns
 
 ### 3.1 Sliding Window
 **Mechanism**: maintain a dynamic "window" over a sequence to process data in $O(N)$ instead of nested loops.
@@ -283,7 +377,7 @@ A standard single-core processor can execute roughly **$10^8$ operations per sec
 
 ---
 
-## 4. Conclusion
+## 5. Conclusion
 
 Mastering these patterns allows you to see the "Matrix" of interview questions. When you see a new problem:
 1.  **Check Constraints** ($N \le 10^5 \implies O(N)$ or $O(N \log N)$).

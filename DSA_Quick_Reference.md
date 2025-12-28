@@ -1,6 +1,6 @@
 # 🚀 DSA Quick Reference (1-Pager)
 
-> **Print this!** Quick lookup during practice. For details, see `DSA_Problem_Solving_Roadmap.md`
+> **Print this!** Quick lookup during practice. For details, see `DSA_Master_Guide.md`
 
 ---
 
@@ -130,4 +130,4 @@ Max: n at constraint    Overflow: large numbers
 
 ---
 
-*Full guide: `DSA_Problem_Solving_Roadmap.md`*
+*Full guide: `DSA_Master_Guide.md`*
