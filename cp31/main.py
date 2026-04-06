@@ -14,8 +14,19 @@ from collections import defaultdict
 #     return [i for i in range(limit + 1) if is_prime[i]]
 
 
-def solve(n, s):
-    print(s)
+def valid_anagrams(s, t):
+	hashmap = {}
+	for i in s:
+		if i not in hashmap:
+			hashmap[i] = 1
+		else:
+			hashmap[i] += 1
+	for j in t:
+		if j not in hashmap:
+			return False
+		else:
+			hashmap[j] -= 1
+	return all(v == 0 for v in hashmap.values())
 
 
 def main():

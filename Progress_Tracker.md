@@ -20,7 +20,7 @@
 
 | # | Pattern | Status | Confidence (1–5) | Problems Solved |
 |---|---------|--------|-------------------|-----------------|
-| 1 | HashMap / Counting | Not started | — | — |
+| 1 | HashMap / Counting | In progress | — | #1 Two Sum, #242 Valid Anagram |
 | 2 | Two Pointers | Not started | — | — |
 | 3 | Sliding Window | Not started | — | — |
 | 4 | Binary Search | Not started | — | — |
@@ -42,3 +42,4 @@
 |---------|------|-------|
 | System Design Framework (7-step template) | Apr 6, 2026 | [Framework](System_Design_Framework.md) |
 | CAP Theorem / Availability vs Consistency | Apr 6, 2026 | [Notes](notes/concept_cap_theorem.md) |
+| HashMap Internals (chaining, open addressing, load factor) | Apr 6, 2026 | [Notes](notes/concept_hashmap_internals.md) |
