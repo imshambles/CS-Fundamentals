@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "SublimeLinter.linters.flake8.executable": [
+      "/Users/vishwaslatiyan/practice/cp31/myvenv/bin/flake8"
+    ]
+  }
+}
